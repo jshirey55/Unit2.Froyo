@@ -1,21 +1,30 @@
+//Prompt
 let froyo = prompt(
     "Enter froyo flavors separated by a comma",
     "vanilla,vanilla,vanilla,strawberry,coffee,coffee"
 )
 
+//Array
 let array = froyo.split(",")
 
-
-console.log(array)
-console.table(array)
-
+//Object
 const flavor = {
     vanilla: 0,
     strawberry: 0,
     coffee: 0
 }
 
-console.log(flavor)
+//Results
+const results = {};
+
+array.forEach((Item)=> {
+    if(results[Item]) {
+        results[Item] += 1;
+    } else {
+        results[Item] = 1;
+    }
+});
 
 
-console.log(Object.values(flavor))
+console.log(results)
+console.table(results)
